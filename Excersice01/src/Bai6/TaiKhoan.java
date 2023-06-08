@@ -11,14 +11,29 @@ public class TaiKhoan {
 	}
 
 	public TaiKhoan(String name,long number,  double balance) {
-		this.number = number;
-		this.name = name;
-		this.balance = balance;
+		if(number<=0)
+			this.number=999999;
+		else
+			this.number = number;
+		if(name.equals(""))
+			this.name="chua xac dinh";
+		else
+			this.name = name;
+		if(balance<50000)
+			this.balance=50000;
+		else
+			this.balance = balance;
 	}
 
 	public TaiKhoan(long number, String name) {
-		this.number = number;
-		this.name = name;
+		if(number<=0)
+			this.number=999999;
+		else
+			this.number = number;
+		if(name.equals(""))
+			this.name="chua xac dinh";
+		else
+			this.name = name;
 	}
 
 	public long getNumber() {
