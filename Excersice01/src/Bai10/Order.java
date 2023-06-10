@@ -27,8 +27,7 @@ public class Order {
 	public OrderDetail[] getLineItems() {
 		return lineItems;
 	}
-	public void setLineItems(OrderDetail[] lineItems) {
-		this.lineItems = lineItems;
+
 	}
 	
 }
