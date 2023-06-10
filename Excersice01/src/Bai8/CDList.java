@@ -3,15 +3,22 @@ package Bai8;
 import java.util.Scanner;
 
 public class CDList {
-	public static void main(String[] args) {
+	public CDList(int number) {
 		System.out.println("Nhap so phan tu");
 		Scanner input = new Scanner(System.in);
-		int number = input.nextInt();
+		number = input.nextInt();
 		CD cd[]=new CD[number];
-		int luu=0;
+	}
+
+	public int tinhSL(CD cd[],int number) {
+		int dem=0;
+		for(int i=0;i<number;i++) 
+			if(cd[i].getTuaCD()!="") 
+				dem++;
+		return dem;
 	}
 	public boolean themCD(int luu, CD cd[],int number) {
-		if(luu<number) {
+		if(tinhSL(cd,number)<number) {
 			System.out.println("Qua kich thuoc mang");
 			return false;
 		}
@@ -30,32 +37,24 @@ public class CDList {
 		return true;
 	}
 	
-	public int tinhSL(CD cd[],int number) {
-		int dem=0;
-		for(int i=0;i<number;i++) 
-			if(cd[i].getTuaCD()!="") 
-				dem++;
-		return dem;
-	}
-	
-	public float tinhGT(CD cd[],int luu) {
+	public float tinhGT(CD cd[],int number) {
 		float tong=0;
-		for(int i=0;i<luu;i++)
+		for(int i=0;i<number;i++)
 			tong+=cd[i].getGia();			
 		return tong;
 	}
 	
-	public void danhSach(int luu, CD cd[]) {
+	public void danhSach(int number, CD cd[]) {
 		System.out.println("Danh sach dia CD:");
-		for(int i=0;i<luu;i++) {
+		for(int i=0;i<number;i++) {
 			System.out.printf("%-6d  %-15s  %-4d  %-7f",cd[i].getMaCD(),cd[i].getTuaCD(),cd[i].getSoBH(),cd[i].getGia());
 		}
 	}
 	
-	public void sapXepGia(int luu, CD cd[]) {
+	public void sapXepGia(int number, CD cd[]) {
 		CD temp;
-		for(int i=0; i<luu-1;i++){
-	        for(int j=i+1;j<luu;j++){
+		for(int i=0; i<number-1;i++){
+	        for(int j=i+1;j<number;j++){
 	        	if(cd[i].getGia() < cd[j].getGia()){
 	        		temp=cd[i];
 	    			cd[i]=cd[j];
@@ -65,10 +64,10 @@ public class CDList {
 		}
 	}
 
-	public void sapXepTua(int luu,CD cd[]) {
+	public void sapXepTua(int number,CD cd[]) {
 		CD temp;
-		for(int i=0; i<luu-1;i++){
-	        for(int j=i+1;j<luu;j++){
+		for(int i=0; i<number-1;i++){
+	        for(int j=i+1;j<number;j++){
 	        	if(cd[i].getTuaCD().compareTo(cd[j].getTuaCD())>0){
 	        		temp=cd[i];
 	    			cd[i]=cd[j];

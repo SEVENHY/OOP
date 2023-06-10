@@ -11,12 +11,11 @@ public class CD {
 	}
 	
 	public CD(int maCD, String tuaCD, int soBH, float gia) {
-		this.maCD = maCD;
-		this.tuaCD = tuaCD;
-		this.soBH = soBH;
-		this.gia = gia;
+		setGia(gia);
+		setMaCD(maCD);
+		setSoBH(soBH);
+		setTuaCD(tuaCD);
 	}
-
 
 	public int getMaCD() {
 		return maCD;
