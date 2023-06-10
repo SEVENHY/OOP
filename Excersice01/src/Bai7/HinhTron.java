@@ -29,6 +29,12 @@ public class HinhTron {
 	public double tinhDienTich() {
 		return banKinh*banKinh*Math.PI;
 	}
+	
+	@Override
+	public String toString() {
+		return "HinhTron [tam=" + tam + ", banKinh=" + banKinh + ", tinhChuVi()=" + tinhChuVi() + ", tinhDienTich()="
+				+ tinhDienTich() + "]";
+	}
 	public static void main(String[] args) {
 		HinhTron ht=new HinhTron(, 0)
 		
